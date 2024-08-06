@@ -1,4 +1,4 @@
-import Datepicker from '../components/DatePicker'; 
+import Datepicker from '../components/datepicker/DatePicker'; 
 
 export default function DatepickerPage() {
   return (

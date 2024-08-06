@@ -1,7 +1,6 @@
 "use client";
 import Head from 'next/head';
-import Timeline from '../../components/Timeline'; // Adjust path if necessary
-
+import Timeline from '../../components/timeline/Timeline'
 export default function TimelinePage() {
   return (
     <div className="bg-white container mx-auto p-4">

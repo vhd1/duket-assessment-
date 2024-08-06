@@ -1,4 +1,4 @@
-import Table from '../components/DataTable'; // Ensure this path is correct
+import Table from '../components/datatable/DataTable'; // Ensure this path is correct
 
 const columns = [
   { key: 'name', label: 'Name' },

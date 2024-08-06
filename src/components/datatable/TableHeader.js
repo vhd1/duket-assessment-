@@ -23,11 +23,11 @@ const SortIcon = ({ direction }) => {
     >
       <path
         className={ascColorClass}
-        d="m7 15 5 5 5-5" // Ascending arrow path
+        d="m7 15 5 5 5-5" 
       />
       <path
         className={descColorClass}
-        d="m7 9 5-5 5 5" // Descending arrow path
+        d="m7 9 5-5 5 5"
       />
     </svg>
   );

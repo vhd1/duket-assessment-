@@ -1,6 +1,6 @@
 "use client";
 import Head from 'next/head';
-import Datepicker from '../../components/DatePicker'; // Adjust the import path if necessary
+import Datepicker from '../../components/datepicker/DatePicker'; 
 
 export default function DatepickerPage() {
   return (

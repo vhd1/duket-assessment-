@@ -1,6 +1,6 @@
 "use client";
 import Head from 'next/head';
-import Table from '../../components/DataTable'; 
+import Table from '../../components/datatable/DataTable'; 
 const columns = [
   { key: 'name', label: 'Name' },
   { key: 'age', label: 'Age' },

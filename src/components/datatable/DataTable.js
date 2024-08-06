@@ -3,7 +3,7 @@ import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import TableHeader from './TableHeader';
 import TableBody from './TableBody';
 import TablePagination from './TablePagination';
-import { exportToCSV, exportToExcel, exportToPDF, printTable } from '../utils/exportUtils'
+import { exportToCSV, exportToExcel, exportToPDF, printTable } from '../../utils/exportUtils'
 import FilterButton from './FilterDropdown';
 
 const Table = ({ columns, data }) => {

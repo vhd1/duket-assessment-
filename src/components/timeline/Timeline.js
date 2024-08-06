@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Image from 'next/image';
 const timelineData = [
   {
     date: '1 Aug, 2023',
@@ -46,7 +46,13 @@ const TimelineItem = ({ avatar, title, description, buttonLabel, buttonAvatar })
     <div className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700">
       <div className="relative z-10 size-7 flex justify-center items-center">
         {avatar ? (
-          <img className="shrink-0 size-7 rounded-full" src={avatar} alt="Avatar" />
+          <Image
+            className="shrink-0 size-7 rounded-full"
+            src={avatar}
+            alt="Avatar"
+            width={32} 
+            height={32}
+          />
         ) : (
           <span className="flex shrink-0 justify-center items-center size-7 border border-gray-200 text-sm font-semibold uppercase text-gray-800 rounded-full dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400">
             {title.charAt(0)}
@@ -66,7 +72,13 @@ const TimelineItem = ({ avatar, title, description, buttonLabel, buttonAvatar })
       {buttonLabel && (
         <button type="button" className="mt-1 -ms-1 p-1 inline-flex items-center gap-x-2 text-xs rounded-lg border border-transparent text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700">
           {buttonAvatar && (
-            <img className="shrink-0 size-4 rounded-full" src={buttonAvatar} alt="Avatar" />
+            <Image
+              className="shrink-0 size-4 rounded-full"
+              src={buttonAvatar}
+              alt="Button Avatar"
+              width={16} 
+              height={16} 
+            />
           )}
           {buttonLabel}
         </button>

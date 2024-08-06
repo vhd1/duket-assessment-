@@ -2,12 +2,14 @@
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import { calculateCalendarRanges } from '../utils/calculateCalendar'; // Adjust the path as needed
+import { calculateCalendarRanges } from '../../utils/calculateCalendar'; 
 
 const DatePicker = () => {
   const [range, setRange] = useState({ start: null, end: null });
 
   const handleDateChange = (newDate) => {
+    console.log('Selected date:', newDate);
+
     if (!range.start) {
       setRange({ start: newDate, end: null });
     } else if (range.start && !range.end) {
@@ -52,25 +54,30 @@ const DatePicker = () => {
     return null;
   };
 
-  const calendarRanges = calculateCalendarRanges(
-    range.start || new Date(),
-    range.end || new Date()
-  );
+  const startDate = range.start || new Date();
+  const endDate = range.end || new Date();
+  const calendarRanges = calculateCalendarRanges(startDate, endDate);
 
   return (
     <div className="date-picker-container">
       <div className="calendar-wrapper" style={{ display: 'flex', flexDirection: 'column' }}>
-        {calendarRanges.map((range, index) => (
-          <div key={index} style={{ flex: '1 1 auto' }}>
-            <Calendar
-              onChange={handleDateChange}
-              value={range.startDate}
-              tileClassName={tileClassName}
-              minDate={range.start}
-              maxDate={range.end}
-            />
-          </div>
-        ))}
+        {calendarRanges.map((range, index) => {
+         
+          const minDate = range.start || new Date(0);
+          const maxDate = range.end || new Date(8640000000000); 
+          
+          return (
+            <div key={index} style={{ flex: '1 1 auto' }}>
+              <Calendar
+                onChange={handleDateChange}
+                value={range.startDate}
+                tileClassName={tileClassName}
+                minDate={minDate}
+                maxDate={maxDate}
+              />
+            </div>
+          );
+        })}
       </div>
       <div className="selected-range">
         {range.start && (
